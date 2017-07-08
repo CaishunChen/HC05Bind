@@ -1,5 +1,5 @@
 # HC05Bind
-Use Arduino to pair a H-C05 Bluetooth module with a Bluetooth device. If the BT device is a GPS module that sends NMEA sentences the library will parse GGA and GSA sentences.
+Use Arduino to pair a H-C05 Bluetooth module with a Bluetooth device. Allows communication between devices using the Arduino GUI serial moni8tor. If the BT device is a GPS module that sends NMEA sentences the library will parse GGA and GSA sentences and display latitude and longitude etc.
 
 Basic Bluetooth sketch connects (at 38400) the HC05 to a BT device
 and communicate using the serial monitor at 9600
