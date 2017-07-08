@@ -1,0 +1,37 @@
+#######################################
+# Syntax Coloring Map for HC05Bind
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+phrase	KEYWORD1
+available	KEYWORD1
+NMEAphrase	KEYWORD1
+fix	KEYWORD1
+latDeg	KEYWORD1
+latMin	KEYWORD1
+longDeg	KEYWORD1
+longMin	KEYWORD1
+latSector	KEYWORD1
+UTC	KEYWORD1
+altitude	KEYWORD1
+tracked	KEYWORD1
+PRNs	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+search	KEYWORD2
+comms	KEYWORD2
+gps	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+HC05AtPin	LITERAL1
+HC05PowerPin	LITERAL1
