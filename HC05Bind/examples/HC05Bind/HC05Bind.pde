@@ -14,14 +14,11 @@ bool paired = false; //paired ok flag
 void setup() {
   if(HC05.begin("0000")) //get HC05 ready for pairing and set password
     {
-      if(HC05.search()) //find BT devices and pair
+      while(!HC05.search()) //find BT devices and pair
 			{
-				Serial.println(F("ALL OK"));
+				Serial.println(F("***Trying again***"));
 			}
-	   else
-			{
-				Serial.println(F("***FAILED - EXITING***"));
-			}
+	  Serial.println(F("***ALL OK***"));
     }
    else
     {
