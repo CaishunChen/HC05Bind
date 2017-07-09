@@ -42,6 +42,7 @@ class HC05Bind
 	int tracked;
 	String PRNs;
 	bool paired = false;
+	float DOP;
 	
 
 	
@@ -72,4 +73,3 @@ class HC05Bind
 };
 
 #endif
-
