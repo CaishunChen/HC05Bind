@@ -84,7 +84,6 @@ void HC05Bind::gps()//get GPS phrase
 						phrase = "";
 						started = false;
 						ended = true;
-						//available = false;
 						countChars = 0;
 						
 					}
@@ -92,7 +91,6 @@ void HC05Bind::gps()//get GPS phrase
 					{
 						started = true;
 						ended = false;
-						//available = false;
 						
 					}
 				if(started)//continue until end found
@@ -111,6 +109,7 @@ void HC05Bind::gps()//get GPS phrase
 							}
 							else if(isValid(phrase))//check for valid NMEA sentence
 							{
+								available = true;//a valid sentence received
 								if(phrase.substring(3,6) == "GGA")//check for GGA sentence
 								{
 									fix = false;//set no fix
