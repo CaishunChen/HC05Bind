@@ -141,7 +141,6 @@ void HC05Bind::gps()//get GPS phrase
 									}
 									
 								}
-								available = true;
 								NMEAphrase = phrase;
 							}
 							countChars = 0;
