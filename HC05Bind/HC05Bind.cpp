@@ -127,6 +127,7 @@ void HC05Bind::gps()//get GPS phrase
 											+ phrase.substring(findComma(1) + 5, findComma(2));//UTC time
 										altitude = phrase.substring(findComma(9) + 1, findComma(10)).toFloat();
 										tracked = phrase.substring(findComma(7) + 1, findComma(8)).toInt();
+										DOP = phrase.substring(findComma(8) + 1, findComma(9)).toFloat();//get horizontal dilution of position
 										
 									}
 									
