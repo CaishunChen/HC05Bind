@@ -39,26 +39,29 @@ if(HC05.paired)//check BT devices are paired
         if(HC05.fix)//GPS has a fix
         {
           //Serial.print(HC05.NMEAphrase);//un-comment if you want to see raw NMEA sentence
-          Serial.print(F("UTC "));
-          Serial.print(HC05.UTC);
-          Serial.print(F("  Latitude "));
-          Serial.print(HC05.latDeg);
-          Serial.print(F("degrees "));
-          Serial.print(HC05.latMin, 4);
-          Serial.print(F(" minutes "));
-          Serial.print(HC05.latSector);
-          Serial.print(F(" Longitude "));
-          Serial.print(HC05.longDeg);
-          Serial.print(F("degrees "));
-          Serial.print(HC05.longMin, 4);
-          Serial.print(F("minutes " ));
-          Serial.print(HC05.longSector);
-          Serial.print(F("  Altitude(mtrs) "));
-          Serial.println(HC05.altitude);
-          Serial.print(F(" Satelites tracked "));
-          Serial.print(HC05.tracked);
-          Serial.print(F("  Satelite PRNs "));
-          Serial.println(HC05.PRNs);
+			Serial.print(F("UTC "));
+			Serial.print(HC05.UTC);
+			Serial.print(F("  Latitude "));
+			Serial.print(HC05.latDeg);
+			Serial.print(F("degrees "));
+			Serial.print(HC05.latMin, 4);
+			Serial.print(F(" minutes "));
+			Serial.print(HC05.latSector);
+			Serial.print(F(" Longitude "));
+			Serial.print(HC05.longDeg);
+			Serial.print(F("degrees "));
+			Serial.print(HC05.longMin, 4);
+			Serial.print(F("minutes " ));
+			Serial.print(HC05.longSector);
+			Serial.print(F("  Altitude(mtrs) "));
+			Serial.println(HC05.altitude);
+			Serial.print(F(" Satelites tracked "));
+			Serial.print(HC05.tracked);
+			Serial.print(F("  Satelite PRNs "));
+			Serial.print(HC05.PRNs);
+			Serial.print(F("  Dilution of position "));
+			Serial.print(HC05.DOP, 1);
+			Serial.println(F(" mtrs")); 
         }
         else
         {
