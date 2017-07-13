@@ -1,6 +1,6 @@
 /*
   HC05Bind.cpp - Library for communication Arduino monitor via HC05 to BT device
-  Connect HC05 VCC to Arduino pin 12
+  Connect HC05 VCC to Arduino pin 12 through a voltage divider.
   Connect HC05 EN to Arduino pin 11
   Connect the HC-05 TX to Arduino pin 2 RX. 
   Connect the HC-05 RX to Arduino pin 3 TX through a voltage divider.
