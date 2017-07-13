@@ -4,7 +4,7 @@ Use Arduino to pair a HC-05 Bluetooth module with a Bluetooth device. Allows com
 Basic Bluetooth sketch connects (at 38400) the HC-05 to a BT device
 and communicate using the serial monitor at 9600
 
-Connect HC-05 VCC to Arduino pin 12
+Connect HC-05 VCC to Arduino pin 12 through a voltage divider.
 
 Connect H-C05 EN to Arduino pin 11
 
