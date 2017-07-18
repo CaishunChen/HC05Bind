@@ -1,7 +1,7 @@
 /* Basic Bluetooth sketch connects (at 38400) the HC05 to a BT device
 	and communicate using the serial monitor at 9600
 	Connect HC05 VCC to Arduino pin 12
-	Connect HC05 EN to Arduino pin 11 
+	Connect HC05 EN to Arduino pin 11 through a voltage divider. 
 	Connect the HC05 GND to GND
 	Connect the HC-05 TX to Arduino pin 2 RX. 
 	Connect the HC-05 RX to Arduino pin 3 TX through a voltage divider.
