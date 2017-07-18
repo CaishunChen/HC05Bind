@@ -1,6 +1,4 @@
-/*
-  MyBlankLib.h will square any number.
-*/
+
 
 #ifndef HC05Bind_h
 #define Hc05Bind_h
