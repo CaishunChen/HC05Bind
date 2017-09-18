@@ -4,6 +4,8 @@
   Connect HC05 EN to Arduino pin 11 through a voltage divider.
   Connect the HC-05 TX to Arduino pin 2 RX. 
   Connect the HC-05 RX to Arduino pin 3 TX through a voltage divider.
+  If paired with a bluetooth enabled GPS will display GPS information 
+  together with distance and bearing to a final location.
   Created by Brian Lambert.
   Released into the public domain.
 */
@@ -128,6 +130,16 @@ void HC05Bind::gps()//get GPS phrase
 										altitude = phrase.substring(findComma(9) + 1, findComma(10)).toFloat();
 										tracked = phrase.substring(findComma(7) + 1, findComma(8)).toInt();
 										DOP = phrase.substring(findComma(8) + 1, findComma(9)).toFloat();//get horizontal dilution of position
+										latDegFloat = (float)latDeg + (latMin/60.0);//lat and long as float values
+										longDegFloat = (float)longDeg + (longMin/60.0);
+										if(latSector == "S")
+										{
+											latDegFloat = -latDegFloat;
+										}
+										if(longSector == "W")
+										{
+											longDegFloat = -longDegFloat;
+										}
 										
 									}
 									
@@ -508,3 +520,27 @@ bool HC05Bind::setToMaster()
 				return false;
 			}
 	}
+
+float HC05Bind::distance(float lat1,float long1,float lat2,float long2)
+{
+	theta1 = lat1*TORADS;
+	theta2 = lat2*TORADS;
+	deltaTheta = (lat2-lat1)*TORADS;
+	deltaLanda = (long2-long1)*TORADS;
+	a = sin(deltaTheta/2)*sin(deltaTheta/2) + cos(theta1)*cos(theta2)*sin(deltaLanda/2)*sin(deltaLanda/2);
+	c1 = 2*atan2(sqrt(a), sqrt(1-a));
+	return d = R*c1;
+}
+
+float HC05Bind::bearing(float lat1,float long1,float lat2,float long2)
+{
+	theta1 = lat1*TORADS;
+	theta2 = lat2*TORADS;
+	landa1 = long1*TORADS;
+	landa2 = long2*TORADS;
+	y = sin(landa2 - landa1)*cos(theta2);
+	x = cos(theta1)*sin(theta2) - sin(theta1)*cos(theta2)*cos(landa2-landa1);
+	brng = atan2(y,x)*TODEGS;
+	return fmod((brng + 360.0),360.0);
+
+}
